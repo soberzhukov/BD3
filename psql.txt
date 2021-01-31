@@ -6,7 +6,12 @@ create table if not exists music_group (
 create table if not exists genre (
 	id serial primary key,
 	name varchar(40) not null unique,
-	group_id integer references music_group(id)
+);
+
+create table if not exists genre_group (
+	genre_id integer not null references genre(id),
+	group_id integer not null references music_group(id),
+	constraint gg primary key (genre_id, group_id)
 );
 
 create table if not exists album (
