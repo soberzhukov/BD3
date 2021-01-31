@@ -5,7 +5,7 @@ create table if not exists music_group (
 
 create table if not exists genre (
 	id serial primary key,
-	name varchar(40) not null unique,
+	name varchar(40) not null unique
 );
 
 create table if not exists genre_group (
